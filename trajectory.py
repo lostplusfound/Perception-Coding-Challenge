@@ -32,20 +32,14 @@ def avg_bbox_depth(row, patch_size):
 
 # Compute depth over each row
 
-num_frames = 0
-valid_frames = 0
-
 positions_cam = []
 for _, row in bboxes.iterrows():
-    num_frames += 1
     avg_depth = avg_bbox_depth(row, 3)
 
     #print(avg_depth)
     if np.all(np.isfinite(avg_depth)):
-        valid_frames += 1
         positions_cam.append(avg_depth)
 
-print(num_frames, valid_frames)
 
 positions_cam = np.array(positions_cam)  # shape (N,3)
 
