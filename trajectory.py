@@ -36,7 +36,6 @@ positions_cam = []
 for _, row in bboxes.iterrows():
     avg_depth = avg_bbox_depth(row, 3)
 
-    #print(avg_depth)
     if np.all(np.isfinite(avg_depth)):
         positions_cam.append(avg_depth)
 
