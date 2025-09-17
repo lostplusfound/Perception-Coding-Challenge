@@ -39,7 +39,6 @@ for _, row in bboxes.iterrows():
     if np.all(np.isfinite(avg_depth)):
         positions_cam.append(avg_depth)
 
-
 positions_cam = np.array(positions_cam)  # shape (N,3)
 
 # Camera -> World axes
